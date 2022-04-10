@@ -37,23 +37,23 @@
     </main>
     <script>
       const daysMessages = [
+        "Today is Sunday 🥹",
         "Today is Monday 😅",
         "Today is Tuesday 😐",
         "Today is Wednesday 😕",
         "Today is Thursday 🫢",
         "Today is Friday 🥳",
         "Today is Saturday 😎",
-        "Today is Sunday 🥹",
       ];
 
       const funnyVideos = [
+        "https://youtu.be/MUsrQLLV7_U?t=94",
         "https://www.youtube.com/shorts/Qa1kcO111uE",
         "https://www.youtube.com/watch?v=CKpYDz-HBgw",
         "https://www.youtube.com/watch?v=Kc4kjVJVFQA",
         "https://www.youtube.com/shorts/kJl2TLnXOVs",
         "https://www.youtube.com/watch?v=mcxhieIPe-w",
         "https://www.youtube.com/watch?v=rWZxdraINSU",
-        "https://youtu.be/MUsrQLLV7_U?t=93",
 
       ]
       window.addEventListener("load", (e) => {
@@ -61,8 +61,8 @@
         if (dayOfWeek === 5) {
             party.confetti(document.body);
         }
-        document.querySelector("#message").innerText = daysMessages[dayOfWeek - 1];
-        document.querySelector("#video").href = funnyVideos[dayOfWeek - 1];
+        document.querySelector("#message").innerText = daysMessages[dayOfWeek];
+        document.querySelector("#video").href = funnyVideos[dayOfWeek];
       });
     </script>
   </body>
