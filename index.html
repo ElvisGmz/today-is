@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="rgb(17, 24, 39)" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <!-- Primary Meta Tags -->
+    <title>Today is? | ElvisGmz_</title>
+    <meta name="title" content="Today is?">
+    <meta name="description" content="If you wonder what day is today or you're just bored, enter here">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://todayis.vercel.app">
+    <meta property="og:title" content="Today is?">
+    <meta property="og:description" content="If you wonder what day is today or you're just bored, enter here">
+    <meta property="og:image" content="./og.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://todayis.vercel.app">
+    <meta property="twitter:title" content="Today is?">
+    <meta property="twitter:description" content="If you wonder what day is today or you're just bored, enter here">
+    <meta property="twitter:image" content="./og.png">
+  </head>
+  <body>
+    <main
+      class="h-screen w-full gap-6 bg-gray-900 flex flex-col text-white items-center justify-center px-4 py-8"
+    >
+      <h1 class="text-3xl sm:text-4xl md:text-5xl text-center" id="message">Today is... 🥁</h1>
+      <a id="video" target="_blank" rel="noopener noreferrer" class="text-sm cursor-pointer bg-red-500 px-4 py-2.5 rounded-lg hover:bg-red-600">
+          Video of the day 🎥
+      </a> 
+    </main>
+    <script>
+      const daysMessages = [
+        "Today is Monday 😅",
+        "Today is Tuesday 😐",
+        "Today is Wednesday 😕",
+        "Today is Thursday 🫢",
+        "Today is Friday 🥳",
+        "Today is Saturday 😎",
+        "Today is Sunday 🥹",
+      ];
+
+      const funnyVideos = [
+        "https://www.youtube.com/shorts/Qa1kcO111uE",
+        "https://www.youtube.com/watch?v=CKpYDz-HBgw",
+        "https://www.youtube.com/watch?v=Kc4kjVJVFQA",
+        "https://www.youtube.com/shorts/kJl2TLnXOVs",
+        "https://www.youtube.com/watch?v=mcxhieIPe-w",
+        "https://www.youtube.com/watch?v=rWZxdraINSU",
+        "https://youtu.be/MUsrQLLV7_U?t=93",
+
+      ]
+      window.addEventListener("load", (e) => {
+        const dayOfWeek = new Date().getDay();
+        if (dayOfWeek === 5) {
+            party.confetti(document.body);
+        }
+        document.querySelector("#message").innerText = daysMessages[dayOfWeek - 1];
+        document.querySelector("#video").href = funnyVideos[dayOfWeek - 1];
+      });
+    </script>
+  </body>
+</html>
